@@ -1,5 +1,22 @@
 # IDAPython scripts
 
+
+## `color.py` :art:
+
+It colors `call`, `push` and `pop` instructions (sets background color).
+It also adds the prefix `>>` to`call` instructions and the number of argument to its parameters (only available if the function declaration is defined).
+This is useful to quickly identify function calls, their parameters and the calling convention.
+
+![colored database](doc/color.png)
+
+
+## `uncolor.py`
+
+It removes the background color of all the database.
+It can be used to remove the colors added by `color.py`.
+It doesn't remove the prefixes thought.
+
+
 ## `copy-strings.py`
 
 It adds two actions to the strings windows:
