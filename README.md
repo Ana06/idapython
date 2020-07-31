@@ -17,6 +17,13 @@ It can be used to remove the colors added by `color.py`.
 It doesn't remove the prefixes thought.
 
 
+## `RC4.py`
+
+It inspect the whole code looking for instructions like `mov register, offset`.
+It tries to decode the bytes which start at the `offset` address using RC4.
+If the result is a printable string, it adds a comment in that location with the decoded string and prints a message to the output window with the decoded string and the address.
+
+
 ## `copy-strings.py`
 
 It adds two actions to the strings windows:
