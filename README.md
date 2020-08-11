@@ -24,6 +24,10 @@ It tries to decode the bytes which start at the `offset` address using RC4.
 If the result is a printable string, it adds a comment in that location with the decoded string and prints a message to the output window with the decoded string and the address.
 
 
+## `resolve-apis.py`
+
+It can be use to decode the apis used by a program which resolves API calls at runtime using hashing.
+
 ## `print-debug.py`
 
 It includes several functions which can be used in conditional breakpoints for debugging purposes.
