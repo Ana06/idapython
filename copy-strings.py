@@ -1,6 +1,7 @@
 import ida_kernwin
 from PyQt5.Qt import QApplication
 
+
 class copy_only_string(ida_kernwin.action_handler_t):
     ACTION_NAME = "copy only string"
     ACTION_LABEL = "Copy only string(s)"
@@ -14,7 +15,7 @@ class copy_only_string(ida_kernwin.action_handler_t):
         for idx in ctx.chooser_selection:
             _, _, _, s = ida_kernwin.get_chooser_data(ctx.widget_title, idx)
             data.append(s)
-        QApplication.clipboard().setText(', '.join(data))
+        QApplication.clipboard().setText(", ".join(data))
         return 0
 
     def update(self, ctx):
@@ -42,10 +43,8 @@ class print_string(ida_kernwin.action_handler_t):
             return ida_kernwin.AST_ENABLE_FOR_WIDGET
         return ida_kernwin.AST_DISABLE_FOR_WIDGET
 
-klasses = [
-    copy_only_string,
-    print_string
-]
+
+klasses = [copy_only_string, print_string]
 
 sw = ida_kernwin.find_widget("Strings window")
 if not sw:
@@ -55,12 +54,13 @@ for klass in klasses:
     ida_kernwin.unregister_action(klass.ACTION_NAME)
 
     if ida_kernwin.register_action(
-            ida_kernwin.action_desc_t(
-                klass.ACTION_NAME,
-                klass.ACTION_LABEL,
-                klass(),
-                klass.ACTION_SHORTCUT)):
+        ida_kernwin.action_desc_t(
+            klass.ACTION_NAME, klass.ACTION_LABEL, klass(), klass.ACTION_SHORTCUT
+        )
+    ):
         if sw:
             ida_kernwin.attach_action_to_popup(sw, None, klass.ACTION_NAME)
-            print("Permanently added '%s' action to 'String window's popup" % klass.ACTION_LABEL)
-
+            print(
+                "Permanently added '%s' action to 'String window's popup"
+                % klass.ACTION_LABEL
+            )
