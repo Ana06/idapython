@@ -13,6 +13,7 @@ sys.path.insert(1, r"C:\Users\user\Desktop\idapython")
 import color
 import nop
 import p
+import decode
 
 
 def init():

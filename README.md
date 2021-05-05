@@ -34,6 +34,11 @@ The `nop()` method nops-out the current instruction and advance the cursor to th
 Provides functions to print different formated data.
 
 
+## `decode.py`
+
+Provides functions to decode strings.
+
+
 ## `RC4.py`
 
 It inspect the whole code looking for instructions like `mov register, offset`.
