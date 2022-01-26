@@ -50,6 +50,10 @@ If the result is a printable string, it adds a comment in that location with the
 
 It can be use to decode the apis used by a program which resolves API calls at runtime using hashing.
 
+## `define-strings.py`
+
+It defines strings in a range of addresses by looking for the 0x0 byte.
+
 
 ## `copy-strings.py`
 
