@@ -1,5 +1,10 @@
-import idaapi
-import idc
+"""It can be use to decode the apis used by a program which resolves API calls at runtime using hashing.
+Alternatives to this script:
+    - C:\Program Files\IDA Pro 7.7\idc\renimp.idc
+    - Universal Unpacker Manual Reconstruct under plugins
+"""
+
+import idaapi, idc
 
 # api resolution table starts at START and ends at END
 # Run this script after the apis have been resolved

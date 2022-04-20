@@ -1,6 +1,6 @@
 # IDAPython scripts
 
-These scripts have been tried with IDA 7.6sp1 and Python 3.7.
+These scripts have been tried with IDA 7.7 and Python 3.7.
 
 ## `idapythonrc.py`
 
@@ -39,20 +39,38 @@ Provides functions to print different formated data.
 Provides functions to decode strings.
 
 
+## `resolve-apis.py`
+
+It can be use to decode the apis used by a program which resolves API calls at runtime using hashing.
+
+Alternatives to this script:
+    - `C:\Program Files\IDA Pro 7.7\idc\renimp.idc`
+    - `Universal Unpacker Manual Reconstruct` under plugins
+
+
+## `define-strings.py`
+
+It defines strings in a range of addresses by looking for the 0x0 byte.
+
+
+## `call-decoding.py`
+
+It uses Appcall to decode strings calling a decoding routine.
+It searches for all calls to the decoding routine.
+
+Check https://hex-rays.com/blog/practical-appcall-examples for more details on Appcall.
+
+
+## `breakpoint-print.py`
+
+This code can be used in a conditional breakpoint at the of a decoding routine (before restoring ebp) to output the decoded string.
+
+
 ## `RC4.py`
 
 It inspect the whole code looking for instructions like `mov register, offset`.
 It tries to decode the bytes which start at the `offset` address using RC4.
 If the result is a printable string, it adds a comment in that location with the decoded string and prints a message to the output window with the decoded string and the address.
-
-
-## `resolve-apis.py`
-
-It can be use to decode the apis used by a program which resolves API calls at runtime using hashing.
-
-## `define-strings.py`
-
-It defines strings in a range of addresses by looking for the 0x0 byte.
 
 
 ## `copy-strings.py`
